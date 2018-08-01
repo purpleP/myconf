@@ -1,0 +1,13 @@
+*.log
+*.so
+*.db
+.idea
+.DS_Store
+.DS_Store?
+__pycache__
+.*
+doc/tags
+!.gitignore
+*.jar
+*.zip
+Session.vim
