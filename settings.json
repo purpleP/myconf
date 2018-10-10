@@ -1,0 +1,73 @@
+{
+    "git.ignoreMissingGitWarning": true,
+    "python.jediEnabled": false,
+    "editor.lineNumbers": "relative",
+    "explorer.confirmDelete": false,
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.colorCustomizations": {
+        "[Solarized Dark]": {
+            "editor.foreground": "#839496"
+        }
+    },
+    "editor.tokenColorCustomizations": {
+        "[Solarized Dark]": {
+            "keywords": "#859900",
+            "variables": "#839496",
+            "textMateRules": [
+                {
+                    "scope": "keyword",
+                    "settings": {
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "scope": "constant",
+                    "settings": {
+                        "foreground": "#839496"
+                    }
+                },
+                {
+                    "scope": "constant.numeric",
+                    "settings": {
+                        "foreground": "#2AA198",
+                    }
+                },
+                {
+                    "scope": "variable",
+                    "settings": {
+                        "foreground": "#839496"
+                    }
+                },
+                {
+                    "scope": "entity.other.inherited-class",
+                    "settings": {
+                        "foreground": "#839496"
+                    }
+                },
+                {
+                    "scope": "entity.name.type",
+                    "settings": {
+                        "foreground": "#839496"
+                    }
+                },
+                {
+                    "scope": "constant.other",
+                    "settings": {
+                        "foreground": "#839496"
+                    }
+                },
+                {
+                    "scope":"support.type.python",
+                    "settings": {
+                        "foreground": "#b58900",
+                    }
+                }
+            ]
+        }
+    },
+    "files.autoSave": "afterDelay",
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "files.trimFinalNewlines": true
+}
