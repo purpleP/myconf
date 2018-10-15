@@ -76,6 +76,69 @@
                         "foreground": "#839496",
                         "fontStyle": ""
                     }
+                },
+                {
+                    "scope": "storage.type.java",
+                    "settings": {
+                        "foreground": "#b58900",
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": "storage.type.generic.java",
+                    "settings": {
+                        "foreground": "#b58900",
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": "entity.name.function.java",
+                    "settings": {
+                        "foreground": "#839496",
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": "storage.type.primitive.java",
+                    "settings": {
+                        "foreground": "#b58900",
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": "storage.type.object.array.java",
+                    "settings": {
+                        "foreground": "#b58900",
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": "variable.other.object.property.java",
+                    "settings": {
+                        "foreground": "#839496",
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": "variable.other.property.java",
+                    "settings": {
+                        "foreground": "#839496",
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": "variable.other.object.java",
+                    "settings": {
+                        "foreground": "#839496",
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": "variable.other.definition.java",
+                    "settings": {
+                        "foreground": "#839496",
+                        "fontStyle": ""
+                    }
                 }
             ]
         }
