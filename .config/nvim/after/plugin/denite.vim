@@ -1,3 +1,6 @@
+if !has('nvim')
+    return
+endif
 call denite#custom#source(
     \ 'file_rec', 'matchers', ['matcher_fuzzy', 'matcher_project_files'])
 call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
@@ -15,25 +18,23 @@ nnoremap <silent> <Esc>f :Denite file_rec<CR>
 nnoremap <silent> <Esc>b :Denite buffer<CR>
 
 
-if has('nvim')
-    fu! s:TryGitLsFiles()
-        call jobstart(
-                    \ ['git', 'rev-parse', '--is-inside-work-tree'],
-                    \ {'on_stdout': function('s:SetDeniteGitFileSearch')}
-                    \ )
-    endfu
+fu! s:TryGitLsFiles()
+    call jobstart(
+                \ ['git', 'rev-parse', '--is-inside-work-tree'],
+                \ {'on_stdout': function('s:SetDeniteGitFileSearch')}
+                \ )
+endfu
 
 
-    fu! s:SetDeniteGitFileSearch(job, data, error)
-        if a:data[0] == 'true'
-            call denite#custom#var('file_rec', 'command', ['git', 'ls-files'])
-        endif
-    endfu
+fu! s:SetDeniteGitFileSearch(job, data, error)
+    if a:data[0] == 'true'
+        call denite#custom#var('file_rec', 'command', ['git', 'ls-files'])
+    endif
+endfu
 
-    augroup CheckForGit
-        au!
-        au DirChanged * call s:TryGitLsFiles()
-    augroup END
+augroup CheckForGit
+    au!
+    au DirChanged * call s:TryGitLsFiles()
+augroup END
 
-    call s:TryGitLsFiles()
-fi
+call s:TryGitLsFiles()
