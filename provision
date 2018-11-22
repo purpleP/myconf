@@ -1,5 +1,6 @@
 #! /usr/bin/env bash
 
+mkdir -p ~/.config/nvim/pack/packages/{opt,start}
 configure_git() {
     git config --global core.editor "nvim -c 'startinsert'"
     git config --global core.pager "perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less"
