@@ -53,10 +53,12 @@ nnoremap <C-H> 20zh
 
 cmap w!! w !sudo tee % >/dev/null
 
-augroup terminal
-    au!
-    au TermOpen * setlocal nonu nornu
-augroup END
+if has('nvim')
+    augroup terminal
+        au!
+        au TermOpen * setlocal nonu nornu
+    augroup END
+endif
 
 augroup myvimrc
     au!
@@ -128,3 +130,10 @@ let g:LanguageClient_serverCommands = {
 if &diff
     syntax off
 endif
+
+fu! SearchFile()
+    call termopen('git ls-files | fzy')
+    tnoremap <buffer> <CR> <CR><C-\><C-n>
+    startinsert
+endfu
+nnoremap <Leader>f :call SearchFile()<CR>

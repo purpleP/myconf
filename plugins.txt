@@ -1,4 +1,3 @@
-.config/nvim/pack/packages/start/ https://github.com/Shougo/denite.nvim
 .config/nvim/pack/packages/start/ https://github.com/tpope/vim-commentary.git
 .config/nvim/pack/packages/start/ https://github.com/neovimhaskell/haskell-vim
 .config/nvim/pack/packages/start/ https://github.com/Shougo/deoplete.nvim
@@ -8,11 +7,8 @@
 .config/nvim/pack/packages/start/ https://github.com/Vimjas/vim-python-pep8-indent
 .config/nvim/pack/packages/start/ https://github.com/tpope/vim-abolish
 .config/nvim/pack/packages/start/ https://github.com/tpope/vim-fugitive
-.config/nvim/pack/packages/start/ https://github.com/dyng/ctrlsf.vim.git
 .config/nvim/pack/packages/start/ https://github.com/rust-lang/rust.vim
 .config/nvim/pack/packages/start/ https://github.com/purpleP/vim-colors-solarized
-.config/nvim/pack/packages/start/ https://github.com/Valloric/MatchTagAlways
-.config/nvim/pack/packages/start/ https://github.com/tmux-plugins/vim-tmux-focus-events
 .config/nvim/pack/packages/start/ https://github.com/autozimu/LanguageClient-neovim
 .config/nvim/pack/packages/start/ https://github.com/michaeljsmith/vim-indent-object
 .config/nvim/pack/packages/start/ https://github.com/tpope/vim-unimpaired
