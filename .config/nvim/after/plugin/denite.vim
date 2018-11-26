@@ -1,5 +1,5 @@
 if !has('nvim')
-    return
+    finish
 endif
 call denite#custom#source(
     \ 'file_rec', 'matchers', ['matcher_fuzzy', 'matcher_project_files'])
