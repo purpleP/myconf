@@ -130,15 +130,3 @@ let g:LanguageClient_serverCommands = {
 if &diff
     syntax off
 endif
-
-fu! SearchFile()
-    fu! Foo(j, d, e)
-        normal gf
-        silent bwipeout! #
-    endfu
-    enew
-    call termopen('git ls-files | fzy', {'on_exit': function('Foo')})
-    tnoremap <buffer> <CR> <CR><C-\><C-n>
-    startinsert
-endfu
-nnoremap <Leader>f :call SearchFile()<CR>
