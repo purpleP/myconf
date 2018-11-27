@@ -132,7 +132,12 @@ if &diff
 endif
 
 fu! SearchFile()
-    call termopen('git ls-files | fzy')
+    fu! Foo(j, d, e)
+        normal gf
+        silent bwipeout! #
+    endfu
+    enew
+    call termopen('git ls-files | fzy', {'on_exit': function('Foo')})
     tnoremap <buffer> <CR> <CR><C-\><C-n>
     startinsert
 endfu
