@@ -1,3 +1,9 @@
+if exists('g:loaded_fzy_filesearch')
+    finish
+endif
+let g:loaded_fzy_filesearch = 1
+
+
 let s:files_prg = 'find -L -type d -path */.* -prune -o -type f -print type l -print'
 
 fu! s:TryGitLsFiles()
@@ -26,7 +32,7 @@ fu! s:SearchFile()
         silent bwipeout! #
     endfu
     enew
-    call termopen(s:files_prg . ' | fzy -l $LINES', {'on_exit': function('OpenFile')})
+    call termopen(s:files_prg . ' | fzy -l $LINES | sed "s/ /\\\\ /g"', {'on_exit': function('OpenFile')})
     tnoremap <buffer> <CR> <CR><C-\><C-n>
     tnoremap <buffer> <Esc> <C-\><C-n>
     startinsert
