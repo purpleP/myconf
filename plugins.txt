@@ -4,6 +4,7 @@
 .config/nvim/pack/packages/start/ https://github.com/jvoorhis/coq.vim.git
 .config/nvim/pack/packages/start/ https://github.com/kana/vim-textobj-user
 .config/nvim/pack/packages/start/ https://github.com/michaeljsmith/vim-indent-object
+.config/nvim/pack/packages/start/ https://github.com/neoclide/coc.nvim.git
 .config/nvim/pack/packages/start/ https://github.com/neovimhaskell/haskell-vim
 .config/nvim/pack/packages/start/ https://github.com/purpleP/python-syntax
 .config/nvim/pack/packages/start/ https://github.com/purpleP/vim-colors-solarized
