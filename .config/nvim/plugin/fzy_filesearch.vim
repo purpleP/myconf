@@ -27,14 +27,8 @@ augroup END
 call s:TryGitLsFiles()
 
 fu! s:SearchFile()
-    fu! OpenFile(j, d, e)
-        normal gf
-        silent bwipeout! #
-    endfu
     enew
-    call termopen(s:files_prg . ' | fzy -l $LINES | sed "s/ /\\\\ /g"', {'on_exit': function('OpenFile')})
-    tnoremap <buffer> <CR> <CR><C-\><C-n>
-    tnoremap <buffer> <Esc> <C-\><C-n>
+    call termopen('nvr $(' . s:files_prg . ' | fzy -l 100 | sed "s/ /\\\\ /g")')
     startinsert
 endfu
 nnoremap <Leader>f :call <SID>SearchFile()<CR>
