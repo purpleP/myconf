@@ -7,6 +7,7 @@
 .config/nvim/pack/packages/start/ https://github.com/neoclide/coc.nvim.git
 .config/nvim/pack/packages/start/ https://github.com/neovimhaskell/haskell-vim
 .config/nvim/pack/packages/start/ https://github.com/purpleP/python-syntax
+.config/nvim/pack/packages/start/ https://github.com/purpleP/sql.vim.git
 .config/nvim/pack/packages/start/ https://github.com/purpleP/vim-colors-solarized
 .config/nvim/pack/packages/start/ https://github.com/rust-lang/rust.vim
 .config/nvim/pack/packages/start/ https://github.com/tommcdo/vim-exchange
