@@ -30,5 +30,8 @@ fu! s:SearchFile()
     enew
     call termopen('nvr -s "$(' . s:files_prg . ' | fzy -l 100)"')
     startinsert
+    augroup Temp
+        au! TermClose <buffer> :bd! #
+    augroup END
 endfu
 nnoremap <Leader>f :call <SID>SearchFile()<CR>
