@@ -27,7 +27,7 @@ call s:TryGitLsFiles()
 
 fu! s:SearchFile()
     enew
-    call termopen("bash -c 'nvr -s \"$(" . s:files_prg . ' | fzy -l 100)')
+    call termopen("bash -c 'f=\"$(" . s:files_prg . " | fzy -l 100)\"; test -n \"$f\" && nvr -s \"$f\" || exit'")
     startinsert
     augroup Temp
         au! TermClose <buffer> :bd! #
