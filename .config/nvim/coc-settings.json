@@ -1,0 +1,13 @@
+{
+  "languageserver": {
+    "hie": {
+      "command": "hie-wrapper",
+      "filetypes": ["haskell"],
+      "rootPatterns": ["package.yaml"]
+    },
+    "clangd": {
+      "command": "clangd",
+      "filetypes": ["c", "cpp", "objc", "objcpp"]
+    }
+  }
+}

@@ -19,4 +19,7 @@ augroup SetupCocMappings
     au FileType json call <SID>SetupMappings()
     au FileType javascript call <SID>SetupMappings()
     au FileType typescript call <SID>SetupMappings()
+    au FileType haskell call <SID>SetupMappings()
+    au FileType c call <SID>SetupMappings()
+    au FileType cpp call <SID>SetupMappings()
 augroup END

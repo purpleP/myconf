@@ -8,6 +8,11 @@ set completeopt=menuone,preview
 set fileformat=unix
 set foldlevel=99
 set foldmethod=indent
+if !has('nvim')
+    set diffopt-=internal
+    set diffopt+=algorithm:patience
+    set diffopt+=indent-heuristic
+endif
 set lazyredraw
 set mouse-=a
 set showtabline=0
