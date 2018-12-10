@@ -1,4 +1,3 @@
-.config/nvim/pack/packages/start/ https://github.com/Raimondi/delimitMate
 .config/nvim/pack/packages/start/ https://github.com/Vimjas/vim-python-pep8-indent
 .config/nvim/pack/packages/start/ https://github.com/idris-hackers/idris-vim
 .config/nvim/pack/packages/start/ https://github.com/jvoorhis/coq.vim.git
