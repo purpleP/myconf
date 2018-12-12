@@ -124,14 +124,6 @@ augroup RestoreCursor
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
 
-let g:LanguageClient_diagnosticsEnable = 0
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ 'python': ['pyls'],
-    \ 'haskell': ['hie-wrapper', '--lsp'],
-\ }
-
 if &diff
     syntax off
 endif
