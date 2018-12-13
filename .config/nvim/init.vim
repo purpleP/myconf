@@ -69,9 +69,6 @@ augroup myvimrc
     au BufEnter .vimrc set ft=vim
 augroup END
 
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 50
-
 set ts=4 sts=4 sw=4 expandtab
 augroup indent
     au!
