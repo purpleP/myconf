@@ -36,7 +36,7 @@ endif
 
 set grepprg=grep\ -rIHnP\ --exclude-dir='.*'
 
-if has("persistent_undo")
+if has('persistent_undo')
     set undodir=~/.undodir/
     set undofile
 endif
@@ -85,7 +85,7 @@ augroup END
 
 augroup ColorColumn
     au!
-    au WinEnter,BufEnter *.py\|*.vim\|*vimrc call matchadd('ColorColumn', '\%81v', 100)
+    au WinEnter,BufEnter *.py\|*.vim\|*vimrc\|java\|haskell call matchadd('ColorColumn', '\%81v', 100)
 augroup END
 
 if has('unix')
@@ -98,7 +98,7 @@ augroup AutoWrite
     au!
     au BufWritePre * call system('mkdir -p '.shellescape(expand('%:p:h')))
     au WinLeave * silent! w
-    au CursorHold * checktime
+    au CursorHold * if &buftype == '' | checktime | endif
     au FocusLost * silent! wall
     au FocusGained * if &buftype == '' | checktime | endif
 augroup END
@@ -121,14 +121,6 @@ augroup RestoreCursor
     au!
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
-
-let g:LanguageClient_diagnosticsEnable = 0
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ 'python': ['pyls'],
-    \ 'haskell': ['hie-wrapper', '--lsp'],
-\ }
 
 if &diff
     syntax off
