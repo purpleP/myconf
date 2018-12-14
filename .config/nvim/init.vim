@@ -36,7 +36,7 @@ endif
 
 set grepprg=grep\ -rIHnP\ --exclude-dir='.*'
 
-if has("persistent_undo")
+if has('persistent_undo')
     set undodir=~/.undodir/
     set undofile
 endif
@@ -69,9 +69,6 @@ augroup myvimrc
     au BufEnter .vimrc set ft=vim
 augroup END
 
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 50
-
 set ts=4 sts=4 sw=4 expandtab
 augroup indent
     au!
@@ -85,7 +82,7 @@ augroup END
 
 augroup ColorColumn
     au!
-    au WinEnter,BufEnter *.py\|*.vim\|*vimrc call matchadd('ColorColumn', '\%81v', 100)
+    au WinEnter,BufEnter *.py\|*.vim\|*vimrc\|java\|haskell call matchadd('ColorColumn', '\%81v', 100)
 augroup END
 
 if has('unix')
@@ -98,7 +95,7 @@ augroup AutoWrite
     au!
     au BufWritePre * call system('mkdir -p '.shellescape(expand('%:p:h')))
     au WinLeave * silent! w
-    au CursorHold * checktime
+    au CursorHold * if &buftype == '' | checktime | endif
     au FocusLost * silent! wall
     au FocusGained * if &buftype == '' | checktime | endif
 augroup END
