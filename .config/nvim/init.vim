@@ -19,12 +19,10 @@ set relativenumber
 set shortmess+=A
 set signcolumn=no
 set smartcase
-set splitbelow
-set splitright
 set termguicolors
 set virtualedit=insert
 set wildcharm=<TAB>
-set wildignore+=*.pyc,*.so,*.swp,*.zip,.*/**
+set wildignore+=*.class,*.pyc,*.so,*.swp,*.zip,.*/**
 set wildmenu
 set winminheight=0
 
@@ -111,8 +109,6 @@ inoremap <silent> <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 cnoremap <expr> <Tab> index(['/', '?'], getcmdtype()) == -1 ? "<TAB>": "<C-G>" 
 cnoremap <expr> <S-Tab> index(['/', '?'], getcmdtype()) == -1 ? "<S-TAB>": "<C-T>" 
-
-nnoremap <F12> <C-i>
 
 augroup RestoreCursor
     au!
