@@ -2,34 +2,36 @@ filetype plugin indent on
 syntax enable
 
 set autowriteall
-set backspace=indent,eol,start
 set breakindent
 set completeopt=menuone,preview
+set diffopt+=algorithm:histogram
+set diffopt+=indent-heuristic
+set diffopt-=internal
 set fileformat=unix
 set foldlevel=99
 set foldmethod=indent
-set diffopt-=internal
-set diffopt+=algorithm:patience
-set diffopt+=indent-heuristic
 set lazyredraw
 set mouse-=a
-set showtabline=0
 set number
 set relativenumber
 set shortmess+=A
+set showtabline=0
 set signcolumn=no
 set smartcase
+set splitbelow
+set splitright
 set termguicolors
 set virtualedit=insert
 set wildcharm=<TAB>
 set wildignore+=*.class,*.pyc,*.so,*.swp,*.zip,.*/**
-set wildmenu
 set winminheight=0
 
 if !has('nvim')
+    set backspace=indent,eol,start
     set encoding=utf-8
     set hlsearch
     set incsearch
+    set wildmenu
 endif
 
 set grepprg=grep\ -rIHnP\ --exclude-dir='.*'
@@ -51,8 +53,6 @@ nnoremap <TAB> <C-w>w
 nnoremap <S-TAB> <C-w>p
 nnoremap <C-L> 20zl
 nnoremap <C-H> 20zh
-
-cmap w!! w !sudo tee % >/dev/null
 
 if has('nvim')
     augroup terminal
