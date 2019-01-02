@@ -6,12 +6,6 @@ setlocal tabstop=4
 setlocal shiftwidth=4
 setlocal expandtab
 
-setlocal formatexpr=LanguageClient#textDocument_rangeFormatting_sync()
-
-nnoremap <silent> <buffer> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> <buffer> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <buffer> gr :call LanguageClient_textDocument_references()<CR>
-
 augroup ClosePreview
     au!
     au CompleteDone * pclose
