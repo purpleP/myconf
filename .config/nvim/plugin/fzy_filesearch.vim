@@ -4,7 +4,7 @@ endif
 
 let g:loaded_fzy_filesearch = 1
 
-let s:files_prg = 'find -L -type d -path "*/.*" -prune -o -type f -print -type l -print'
+let s:files_cmd = 'find -L -type d -path "*/.*" -prune -o -type f -print -type l -print'
 
 fu! s:TryGitLsFiles()
     call jobstart(
