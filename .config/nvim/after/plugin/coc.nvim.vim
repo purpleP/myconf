@@ -3,8 +3,6 @@ fu! s:SetupMappings()
 		au! CompleteDone * if pumvisible() == 0 | pclose | endif
 	augroup END
     inoremap <buffer> <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
-    nmap <buffer> <silent> [c <Plug>(coc-diagnostic-prev)
-    nmap <buffer> <silent> ]c <Plug>(coc-diagnostic-next)
     nmap <buffer> <silent> gd <Plug>(coc-definition)
     nmap <buffer> <silent> gy <Plug>(coc-type-definition)
     nmap <buffer> <silent> gi <Plug>(coc-implementation)
