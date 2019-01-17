@@ -9,7 +9,8 @@ fu! s:SetupMappings()
     nmap <buffer> <silent> gr <Plug>(coc-references)
     nmap <buffer> <leader>a <Plug>(coc-codeaction)
     setlocal formatexpr=CocAction('formatSelected')
-    nnoremap <buffer> <silent> K :call <SID>show_documentation()<CR>
+    nnoremap <buffer> <silent> <Leader>r(coc-rename)
+    nnoremap <buffer> <silent> K :call CocAction('doHover')<CR>
 endfu
 
 augroup SetupCocMappings
@@ -22,5 +23,6 @@ augroup SetupCocMappings
     au FileType json call <SID>SetupMappings()
     au FileType python call <SID>SetupMappings()
     au FileType typescript call <SID>SetupMappings()
+    au CursorHoldI,CursorMovedI * call CocAction('showSignatureHelp')
     au User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup END
