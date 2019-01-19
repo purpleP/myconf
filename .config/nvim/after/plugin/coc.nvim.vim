@@ -9,7 +9,7 @@ fu! s:SetupMappings()
     nmap <buffer> <silent> gr <Plug>(coc-references)
     nmap <buffer> <leader>a <Plug>(coc-codeaction)
     setlocal formatexpr=CocAction('formatSelected')
-    nnoremap <buffer> <silent> <Leader>r(coc-rename)
+    nnoremap <buffer> <silent> <Leader>r <Plug>(coc-rename)
     nnoremap <buffer> <silent> K :call CocAction('doHover')<CR>
 endfu
 
