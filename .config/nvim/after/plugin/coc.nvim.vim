@@ -9,8 +9,10 @@ fu! s:SetupMappings()
     nmap <buffer> <silent> gr <Plug>(coc-references)
     nmap <buffer> <leader>a <Plug>(coc-codeaction)
     setlocal formatexpr=CocAction('formatSelected')
-    nnoremap <buffer> <silent> <Leader>r <Plug>(coc-rename)
+    nmap <buffer> <silent> <Leader>r <Plug>(coc-rename)
     nnoremap <buffer> <silent> K :call CocAction('doHover')<CR>
+    vmap <leader>a <Plug>(coc-codeaction-selected)
+    nmap <leader>a <Plug>(coc-codeaction-selected)
 endfu
 
 augroup SetupCocMappings
