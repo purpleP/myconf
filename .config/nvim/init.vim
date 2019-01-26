@@ -34,7 +34,7 @@ if !has('nvim')
     set wildmenu
 endif
 
-set grepprg=grep\ -rIHnP\ --exclude-dir='.*'
+set grepprg=rg\ --vimgrep
 
 if has('persistent_undo')
     set undodir=~/.undodir/
