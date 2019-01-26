@@ -34,6 +34,7 @@ if !has('nvim')
     set wildmenu
 endif
 
+set grepformat=%f:%l:%c:%m
 set grepprg=rg\ --vimgrep
 
 if has('persistent_undo')
