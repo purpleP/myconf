@@ -92,9 +92,9 @@ augroup AutoWrite
     au!
     au BufWritePre * call system('mkdir -p '.shellescape(expand('%:p:h')))
     au WinLeave * silent! w
-    au CursorHold * if &buftype == '' | checktime | endif
+    au CursorHold * if &buftype == '' | silent! checktime | endif
     au FocusLost * silent! wall
-    au FocusGained * if &buftype == '' | checktime | endif
+    au FocusGained * if &buftype == '' | silent! checktime | endif
 augroup END
 
 set statusline=%f\ %m\ %h\ %r\ %{winnr()}\%=%l:%v/%L\ %p%%
