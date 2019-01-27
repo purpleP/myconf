@@ -50,8 +50,6 @@ silent! colorscheme solarized
 
 let mapleader = "\<Space>"
 nnoremap <silent> <leader>* :let @/ = '\<' . expand('<cword>') . '\>' <bar> set hlsearch<CR>
-nnoremap <TAB> <C-w>w
-nnoremap <S-TAB> <C-w>p
 nnoremap <C-L> 20zl
 nnoremap <C-H> 20zh
 
