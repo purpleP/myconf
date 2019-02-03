@@ -2,6 +2,7 @@
 
 mkdir -p ~/.config/nvim/pack/packages/{opt,start}
 configure_git() {
+    git config --global commit.verbose "true"
     git config --global core.editor "nvim -c 'startinsert'"
     git config --global core.pager "perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less"
     git config --global core.excludesfile "~/.gitignore_global"
@@ -12,6 +13,7 @@ configure_git() {
     git config --global difftool.vimdiff.cmd "nvim -d \$BASE \$LOCAL -O"
     git config --global difftool.prompt "true"
     git config --global difftool.path "vimdiff"
+    git config --global difftool.trustExitCode "true"
     git config --global diff.wordRegex "(\w+)|([^[:space:]])"
     git config --global alias.wd "diff --word-diff=color"
     git config --global alias.d "difftool"
