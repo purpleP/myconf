@@ -15,6 +15,7 @@ set mouse-=a
 set number
 set relativenumber
 set shortmess+=A
+set shortmess+=c
 set showtabline=0
 set signcolumn=no
 set smartcase

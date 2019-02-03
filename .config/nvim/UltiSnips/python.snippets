@@ -1,11 +1,4 @@
-global !p
-import sys
-from os.path import expanduser, join
-sys.path.append(join(expanduser('~'), '.vim/UltiSnips/helpers'))
-from helpers import *
-endglobal
-
-snippet f "from import" "in_imports(snip)" be
+snippet fi "from import"
 from ${1} import ${2}
 endsnippet
 
@@ -42,12 +35,9 @@ snippet fixture "pytest fixture" b
 @pytest.fixture(${1})
 endsnippet
 
-pre_expand "expand_method_in_right_place(snip)"
 snippet test "pytest test" b
 def test_${1:name}(${2}):
-    ${3:assert False}`!p
-format_function(tabstops=t, name_index=1, params_index=2)
-    `
+    ${3:assert False}
 endsnippet
 
 snippet a "assert " b
@@ -58,67 +48,30 @@ snippet r "return" b
 return
 endsnippet
 
-pre_expand "expand_method_in_right_place(snip)"
 snippet c "new class" b
 class ${1:name}:
     ${2:${VISUAL:pass}}
 endsnippet
 
 
-pre_expand "expand_method_in_right_place(snip)"
-snippet pdec "decorator with parameters" "lang_context(snip) in ('async def', 'def', 'module')" be
-def ${1:name}(${2}):
-    def dec(f):
-        @wraps(f)
-        def wrapper(*args, **kwargs):
-            f(*args, **kwargs)
-        return wrapper`!p
-format_function(tabstops=t, name_index=1, params_index=2)
-`
-    return dec
-endsnippet
-
-pre_expand "expand_method_in_right_place(snip)"
-snippet dec "decorator" "lang_context(snip) in ('async def', 'def', 'module')" be
-def ${1:name}(f):
-    @wraps(f)
-    def wrapper(*args, **kwargs):
-        f(*args, **kwargs)
-    return wrapper`!p
-format_function(tabstops=t, name_index=1, params_index=2)
-`
-endsnippet
-
-pre_expand "expand_method_in_right_place(snip)"
-snippet ad "Async function" "lang_context(snip) in ('async def', 'def', 'module')" be
+snippet ad "Async function"
 async def ${1:name}(${2}):
-    ${3:${VISUAL:pass}}`!p
-format_function(tabstops=t, name_index=1, params_index=2)
-`
+    ${3:${VISUAL:pass}}
 endsnippet
 
-pre_expand "expand_method_in_right_place(snip)"
-snippet ad "Async method" "lang_context(snip) == 'class'" be
+snippet ad "Async method"
 async def ${1:name}(self${2}):
-    ${3:${VISUAL:pass}}`!p
-format_function(tabstops=t, name_index=1, params_index=2)
-`
+    ${3:${VISUAL:pass}}
 endsnippet
 
-pre_expand "expand_method_in_right_place(snip)"
-snippet d "Python function" "lang_context(snip) in ('async def','def', 'module')" be
+snippet d "Python function"
 def ${1:name}(${2}):
-    ${3:${VISUAL:pass}}`!p
-format_function(tabstops=t, name_index=1, params_index=2)
-`
+    ${3:${VISUAL:pass}}
 endsnippet
 
-pre_expand "expand_method_in_right_place(snip)"
-snippet d "Python method" "lang_context(snip) == 'class'" be
+snippet d "Python method"
 def ${1:name}(self, ${2}):
-    ${3:${VISUAL:pass}}`!p
-format_function(tabstops=t, name_index=1, params_index=2)
-`
+    ${3:${VISUAL:pass}}
 endsnippet
 
 snippet l "Lambda function" w

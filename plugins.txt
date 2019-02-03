@@ -16,4 +16,3 @@
 .config/nvim/pack/packages/start/ https://github.com/tpope/vim-repeat
 .config/nvim/pack/packages/start/ https://github.com/tpope/vim-surround
 .config/nvim/pack/packages/start/ https://github.com/tpope/vim-unimpaired
-.config/nvim/pack/packages/opt/ https://github.com/SirVer/ultisnips
