@@ -25,6 +25,6 @@ augroup SetupCocMappings
     au FileType json call <SID>SetupMappings()
     au FileType python call <SID>SetupMappings()
     au FileType typescript call <SID>SetupMappings()
-    au CursorHoldI,CursorMovedI * call CocAction('showSignatureHelp')
+    au CursorHoldI,CursorMovedI * silent! call CocAction('showSignatureHelp')
     au User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup END
