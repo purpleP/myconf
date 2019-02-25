@@ -1,1 +1,1 @@
-set PAGER 'less -S#10'
+\setenv PAGER 'less -S#10'
