@@ -1,6 +1,9 @@
 fu! s:SetupMappings()
 	augroup ClosePopup
-		au! CompleteDone * if pumvisible() == 0 | pclose | endif
+        au!
+		au CompleteDone * if pumvisible() == 0 | pclose | endif
+        au CursorHoldI,CursorMovedI * silent! call CocActionAsync('showSignatureHelp')
+        au User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 	augroup END
     inoremap <buffer> <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
     nmap <buffer> <silent> gd <Plug>(coc-definition)
@@ -11,8 +14,7 @@ fu! s:SetupMappings()
     setlocal formatexpr=CocAction('formatSelected')
     nmap <buffer> <silent> <Leader>r <Plug>(coc-rename)
     nnoremap <buffer> <silent> K :call CocAction('doHover')<CR>
-    vmap <Leader>a <Plug>(coc-codeaction-selected)
-    nmap <Leader>a <Plug>(coc-codeaction-selected)
+    vmap <buffer> <Leader>a <Plug>(coc-codeaction-selected)
 endfu
 
 augroup SetupCocMappings
@@ -25,6 +27,4 @@ augroup SetupCocMappings
     au FileType json call <SID>SetupMappings()
     au FileType python call <SID>SetupMappings()
     au FileType typescript call <SID>SetupMappings()
-    au CursorHoldI,CursorMovedI * silent! call CocAction('showSignatureHelp')
-    au User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup END

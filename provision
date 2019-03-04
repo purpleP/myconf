@@ -4,7 +4,6 @@ mkdir -p ~/.config/nvim/pack/packages/{opt,start}
 configure_git() {
     git config --global commit.verbose "true"
     git config --global core.editor "nvim -c 'startinsert'"
-    git config --global core.pager "perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight | less"
     git config --global core.excludesfile "~/.gitignore_global"
     git config --global mergetool.vimdiff.cmd "nvim -d \$BASE \$MERGED \$REMOTE \$LOCAL -c 'wincmd w' -c 'wincmd J'"
     git config --global mergetool.prompt "true"
@@ -18,7 +17,8 @@ configure_git() {
     git config --global alias.wd "diff --word-diff=color"
     git config --global alias.d "difftool"
     git config --global alias.a "!sh -c 'git add -- \"$@\" && git status' --"
-    git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+    git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=human"
+    git config --global log.date auto:human
     git config --global pager.log "true"
     git config --global pager.show "true"
     git config --global pager.diff "true"
