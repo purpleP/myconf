@@ -45,6 +45,7 @@ endif
 
 if has('nvim')
     set inccommand=nosplit
+    set wildoptions=pum
 endif
 
 silent! colorscheme solarized

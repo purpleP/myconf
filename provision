@@ -26,7 +26,7 @@ configure_git() {
     git config --global filter.no_breakpoints.clean 'sed -E "/pdb/d;/^\s*breakpoint\(\)/d"'
 }
 
-function install_or_update_plugin() {
+install_or_update_plugin() {
     res=$(git -C "$1" clone "$2" --depth=1 --recursive 2>&1)
     if [[ $? -ne 0 ]]; then
         regex="fatal: destination path '([^']+)'.*" 

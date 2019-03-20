@@ -2,7 +2,6 @@ fu! s:SetupMappings()
 	augroup ClosePopup
         au!
 		au CompleteDone * if pumvisible() == 0 | pclose | endif
-        au CursorHoldI,CursorMovedI * silent! call CocActionAsync('showSignatureHelp')
         au User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 	augroup END
     inoremap <buffer> <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
