@@ -9,5 +9,6 @@
       "command": "clangd",
       "filetypes": ["c", "cpp", "objc", "objcpp"]
     }
-  }
+  },
+  "java.signatureHelp.enabled": true
 }
