@@ -76,6 +76,7 @@ augroup indent
     au FileType html setlocal ts=2 sts=2 sw=2 expandtab
     au FileType json setlocal ts=2 sts=2 sw=2 expandtab
     au FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+    au FileType typescript setlocal ts=2 sts=2 sw=2 expandtab
     au FileType css setlocal ts=2 sts=2 sw=2 expandtab
 augroup END
 
