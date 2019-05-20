@@ -14,9 +14,8 @@ configure_git() {
     git config --global difftool.path "vimdiff"
     git config --global difftool.trustExitCode "true"
     git config --global diff.wordRegex "(\w+)|([^[:space:]])"
+    git config --global alias.c '!git checkout $(git for-each-ref --format="%(refname)" refs/heads/ | xargs basename |fzy)'
     git config --global alias.wd "diff --word-diff=color"
-    git config --global alias.d "difftool"
-    git config --global alias.a "!sh -c 'git add -- \"$@\" && git status' --"
     git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=human"
     git config --global log.date auto:human
     git config --global pager.log "true"
