@@ -7,6 +7,7 @@ configure_git() {
     git config --global core.excludesfile "~/.gitignore_global"
     git config --global mergetool.vimdiff.cmd "nvim -d \$BASE \$MERGED \$REMOTE \$LOCAL -c 'wincmd w' -c 'wincmd J'"
     git config --global mergetool.prompt "true"
+    git config --global merge.conflictstyle diff3
     git config --global merge.tool "vimdiff"
     git config --global diff.tool "vimdiff"
     git config --global difftool.vimdiff.cmd "nvim -d \$BASE \$LOCAL -O"
