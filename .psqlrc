@@ -1,1 +1,3 @@
 \setenv PAGER 'less -S#10'
+\timing
+\x auto
