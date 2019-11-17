@@ -25,5 +25,6 @@ augroup SetupCocMappings
     au FileType javascript call <SID>SetupMappings()
     au FileType json call <SID>SetupMappings()
     au FileType python call <SID>SetupMappings()
+    au FileType rust call <SID>SetupMappings()
     au FileType typescript call <SID>SetupMappings()
 augroup END
