@@ -1,5 +1,6 @@
 .config/nvim/pack/packages/start/ https://github.com/Vimjas/vim-python-pep8-indent
 .config/nvim/pack/packages/start/ https://github.com/idris-hackers/idris-vim
+.config/nvim/pack/packages/start/ https://github.com/igankevich/mesonic
 .config/nvim/pack/packages/start/ https://github.com/jvoorhis/coq.vim.git
 .config/nvim/pack/packages/start/ https://github.com/kana/vim-textobj-user
 .config/nvim/pack/packages/start/ https://github.com/leafgarland/typescript-vim.git
