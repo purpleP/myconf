@@ -10,5 +10,6 @@
       "filetypes": ["c", "cpp", "objc", "objcpp"]
     }
   },
-  "java.signatureHelp.enabled": true
+  "java.signatureHelp.enabled": true,
+  "python.jediEnabled": false
 }
