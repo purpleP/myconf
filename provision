@@ -3,7 +3,6 @@
 mkdir -p ~/.config/nvim/pack/packages/{opt,start}
 configure_git() {
 
-    git config --global alias.c '!git checkout $(git for-each-ref --format="%(refname)" refs/heads/ | xargs -I {} basename {} | fzy)'
     git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=human"
     git config --global alias.wd "diff --word-diff=color"
     git config --global commit.verbose "true"
