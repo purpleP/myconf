@@ -100,7 +100,7 @@ augroup AutoWrite
     au FocusGained * if &buftype == '' | silent! checktime | endif
 augroup END
 
-set statusline=%f\ %m\ %h\ %r\ %{winnr()}\%=%l:%v/%L\ %p%%
+set statusline=%t\ %m\ %h\ %r\ %{winnr()}\%=%l:%v/%L\ %p%%
 augroup StatusLine
     au!
     au WinEnter,WinLeave,WinNew * redrawstatus!
