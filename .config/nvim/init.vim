@@ -78,12 +78,6 @@ augroup ColorColumn
     au WinEnter,BufEnter *.py\|*.vim\|*vimrc\|*.java\|*.hs call matchadd('ColorColumn', '\%81v', 100)
 augroup END
 
-if has('unix')
-    let g:python3_host_prog = $HOME.'/.venv/bin/python'
-else
-    let g:python3_host_prog = $HOME.'/.venv/bin/python.exe'
-endif
-
 augroup AutoWrite
     au!
     au BufWritePre * call system('mkdir -p '.shellescape(expand('%:p:h')))
