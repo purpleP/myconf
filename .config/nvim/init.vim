@@ -102,3 +102,9 @@ cnoremap <expr> <S-Tab> index(['/', '?'], getcmdtype()) == -1 ? "<S-TAB>": "<C-T
 if &diff
     syntax off
 endif
+
+augroup Quickfix
+    au!
+    au QuickFixCmdPost [^l]* nested cwindow
+    au QuickFixCmdPost *l nested lwindow
+augroup END
