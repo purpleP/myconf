@@ -26,6 +26,11 @@ set virtualedit=insert
 set wildcharm=<TAB>
 set wildignore+=*.class,*.pyc,*.so,*.swp,*.zip,.*/**
 set winminheight=0
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
 
 if !has('nvim')
     set backspace=indent,eol,start
@@ -66,18 +71,6 @@ augroup myvimrc
     au!
     au BufWritePost *vimrc\|*init.vim source $MYVIMRC
     au BufEnter .vimrc set ft=vim
-augroup END
-
-set ts=4 sts=4 sw=4 expandtab
-augroup indent
-    au!
-    au FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-    au FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-    au FileType html setlocal ts=2 sts=2 sw=2 expandtab
-    au FileType json setlocal ts=2 sts=2 sw=2 expandtab
-    au FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
-    au FileType typescript setlocal ts=2 sts=2 sw=2 expandtab
-    au FileType css setlocal ts=2 sts=2 sw=2 expandtab
 augroup END
 
 augroup ColorColumn
