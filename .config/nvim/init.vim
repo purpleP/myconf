@@ -75,7 +75,7 @@ augroup END
 
 augroup ColorColumn
     au!
-    au WinEnter,BufEnter *.py\|*.vim\|*vimrc\|*.java\|*.hs call matchadd('ColorColumn', '\%81v', 100)
+    au WinEnter,BufEnter *.py\|*.vim\|*vimrc\|*.java\|*.hs\|*.rs call matchadd('ColorColumn', '\%81v', 100)
 augroup END
 
 augroup AutoWrite
