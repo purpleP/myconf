@@ -87,12 +87,6 @@ augroup AutoWrite
     au FocusGained * if &buftype == '' | setlocal rnu | silent! checktime | endif
 augroup END
 
-set statusline=%{getcwd()}\ %t\ %m\ %h\ %r\ %{winnr()}\%=%l:%v/%L\ %p%%
-augroup StatusLine
-    au!
-    au WinEnter,WinLeave,WinNew * redrawstatus!
-augroup END
-
 inoremap <silent> <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <silent> <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
