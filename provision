@@ -28,6 +28,7 @@ configure_git() {
     git config --global difftool.prompt "true"
     git config --global difftool.trustExitCode "true"
     git config --global difftool.vimdiff.cmd "nvim -d \$BASE \$LOCAL -O"
+    git config --global fetch.parallel 20
     git config --global fetch.writeCommitGraph "true"
     git config --global filter.no_breakpoints.clean 'sed -E "/pdb/d;/^\s*breakpoint\(\)/d"'
     git config --global help.autocorrect -1
