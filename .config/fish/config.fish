@@ -25,3 +25,4 @@ set -U fish_pager_color_prefix cyan --underline
 set -U fish_pager_color_progress brwhite --background=cyan
 abbr --add 'v' 'nvim'
 abbr --add 'g' 'git'
+fish_vi_keybindings
