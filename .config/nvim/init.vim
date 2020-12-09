@@ -9,7 +9,6 @@ set diffopt+=indent-heuristic
 set diffopt-=internal
 set fileformat=unix
 set foldlevel=99
-set foldmethod=indent
 set lazyredraw
 set mouse-=a
 set number
@@ -30,7 +29,6 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-
 
 if !has('nvim')
     set backspace=indent,eol,start
@@ -102,3 +100,17 @@ augroup Quickfix
     au QuickFixCmdPost [^l]* nested cwindow
     au QuickFixCmdPost *l nested lwindow
 augroup END
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  indent = {
+    enable = true
+  },
+  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+  },
+}
+EOF
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
