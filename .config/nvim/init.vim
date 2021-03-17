@@ -54,7 +54,6 @@ endif
 silent! colorscheme solarized
 
 let mapleader = "\<Space>"
-nnoremap <silent> <leader>* :let @/ = '\<' . expand('<cword>') . '\>' <bar> set hlsearch<CR>
 nnoremap <C-L> 20zl
 nnoremap <C-H> 20zh
 
@@ -64,12 +63,6 @@ if has('nvim')
         au TermOpen * setlocal nonu nornu
     augroup END
 endif
-
-augroup myvimrc
-    au!
-    au BufWritePost *vimrc\|*init.vim source $MYVIMRC
-    au BufEnter .vimrc set ft=vim
-augroup END
 
 augroup ColorColumn
     au!
