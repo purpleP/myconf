@@ -94,7 +94,7 @@ fu! s:SetStatusLine(enter)
         let base = 'StatusLineNC'
     endif
     setl stl=
-    let &l:stl .= '%#' . base . 'Cwd#%{tabline#ShortCwd()}%#' . base . '#'
+    let &l:stl .= '%#' . base . '#%{tabline#ShortCwd()}%#' . base . '#'
     setl stl+=\ %t
     setl stl+=\ %m
     setl stl+=\ %h
