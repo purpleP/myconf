@@ -1,12 +1,11 @@
 .config/nvim/pack/packages/start/ https://github.com/idris-hackers/idris-vim
-.config/nvim/pack/packages/start/ https://github.com/igankevich/mesonic
 .config/nvim/pack/packages/start/ https://github.com/jvoorhis/coq.vim.git
 .config/nvim/pack/packages/start/ https://github.com/kana/vim-textobj-user
-.config/nvim/pack/packages/start/ https://github.com/leafgarland/typescript-vim.git
-.config/nvim/pack/packages/start/ https://github.com/mearns/vim-gradle.git
 .config/nvim/pack/packages/start/ https://github.com/michaeljsmith/vim-indent-object
-.config/nvim/pack/packages/start/ https://github.com/neoclide/coc.nvim.git
 .config/nvim/pack/packages/start/ https://github.com/neovimhaskell/haskell-vim
+.config/nvim/pack/packages/start/ https://github.com/nvim-lua/plenary.nvim
+.config/nvim/pack/packages/start/ https://github.com/nvim-lua/popup.nvim
+.config/nvim/pack/packages/start/ https://github.com/nvim-lua/telescope.nvim
 .config/nvim/pack/packages/start/ https://github.com/nvim-treesitter/nvim-treesitter.git
 .config/nvim/pack/packages/start/ https://github.com/purpleP/sql.vim.git
 .config/nvim/pack/packages/start/ https://github.com/purpleP/vim-colors-solarized
