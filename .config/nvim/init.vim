@@ -94,6 +94,11 @@ augroup Quickfix
     au QuickFixCmdPost *l nested lwindow
 augroup END
 
+augroup HighlightYank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
+augroup END
+
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   indent = {
