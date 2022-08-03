@@ -5,6 +5,7 @@ configure_git() {
 
     git config --global alias.a "commit --amend"
     git config --global alias.b "branch --sort=committerdate"
+    git config --global alias.blank "!git clean -dfX; git submodule foreach --recursive 'git clean -dfX'"
     git config --global alias.c "commit"
     git config --global alias.d "diff"
     git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=human"
@@ -42,6 +43,7 @@ configure_git() {
     git config --global pull.rebase true
     git config --global push.default current
     git config --global rerere.enabled "true"
+    git config --global submodule.recurse true
 
 }
 
