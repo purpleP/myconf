@@ -1,6 +1,10 @@
-.config/nvim/pack/packages/start/ https://github.com/hrsh7th/nvim-compe
-.config/nvim/pack/packages/start/ https://github.com/hrsh7th/vim-vsnip-integ.git
-.config/nvim/pack/packages/start/ https://github.com/hrsh7th/vim-vsnip.git
+.config/nvim/pack/packages/start/ https://github.com/dcampos/nvim-snippy
+.config/nvim/pack/packages/start/ https://github.com/dcampos/cmp-snippy
+.config/nvim/pack/packages/start/ https://github.com/hrsh7th/cmp-nvim-lsp
+.config/nvim/pack/packages/start/ https://github.com/hrsh7th/cmp-buffer
+.config/nvim/pack/packages/start/ https://github.com/hrsh7th/cmp-path
+.config/nvim/pack/packages/start/ https://github.com/hrsh7th/cmp-cmdline
+.config/nvim/pack/packages/start/ https://github.com/hrsh7th/nvim-cmp
 .config/nvim/pack/packages/start/ https://github.com/idris-hackers/idris-vim
 .config/nvim/pack/packages/start/ https://github.com/kana/vim-textobj-user
 .config/nvim/pack/packages/start/ https://github.com/michaeljsmith/vim-indent-object
