@@ -31,7 +31,7 @@ set shiftwidth=4
 set expandtab
 set bg=light
 set list!
-set listchars=trail:·
+set listchars=tab:░░,trail:·
 
 if !has('nvim')
     set backspace=indent,eol,start
