@@ -95,6 +95,7 @@ nnoremap <silent> <CR> :Tele find_files<CR>
 augroup Quickfix
     au!
     au BufReadPost quickfix nnoremap <buffer> <CR> <CR>
+    au CmdwinEnter * nnoremap <buffer> <CR> <CR>
     au QuickFixCmdPost [^l]* nested cwindow
     au QuickFixCmdPost *l nested lwindow
 augroup END
