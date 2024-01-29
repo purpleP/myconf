@@ -39,6 +39,12 @@ if !has('nvim')
     set hlsearch
     set incsearch
     set wildmenu
+    set inccommand=nosplit
+    set wildoptions=pum
+    augroup terminal
+        au!
+        au TermOpen * setlocal nonu nornu
+    augroup END
 endif
 
 set grepformat=%f:%l:%c:%m
@@ -49,23 +55,11 @@ if has('persistent_undo')
     set undofile
 endif
 
-if has('nvim')
-    set inccommand=nosplit
-    set wildoptions=pum
-endif
-
 silent! colorscheme solarized
 
 let mapleader = "\<Space>"
 nnoremap <C-L> 20zl
 nnoremap <C-H> 20zh
-
-if has('nvim')
-    augroup terminal
-        au!
-        au TermOpen * setlocal nonu nornu
-    augroup END
-endif
 
 augroup ColorColumn
     au!
@@ -91,7 +85,16 @@ if &diff
     syntax off
 endif
 
+
+let g:netrw_list_hide = '^\.\.\?/$'
+let g:netrw_hide = 1
+
 nnoremap <silent> <CR> :Tele find_files<CR>
+nnoremap <silent> <C-I> <C-I>
+nnoremap <silent> <C-H> <C-H>
+nnoremap <silent> <TAB> :Tele lsp_document_symbols<CR>
+nnoremap <silent> <BS> :Tele live_grep<CR>
+nnoremap <silent> <DEL> :Vex<CR>
 augroup Quickfix
     au!
     au BufReadPost quickfix nnoremap <buffer> <CR> <CR>
@@ -104,6 +107,7 @@ augroup HighlightYank
     autocmd!
     au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
 augroup END
+set tagfunc=lua.vim.lsp.tagfunc
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
@@ -134,7 +138,7 @@ local on_attach = function(client, bufnr)
 
 end
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
   properties = {
@@ -214,28 +218,4 @@ local cmp = require'cmp'
     })
   })
 
-  -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline({ '/', '?' }, {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = {
-      { name = 'buffer' }
-    }
-  })
-
-  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline(':', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-      { name = 'path' }
-    }, {
-      { name = 'cmdline' }
-    })
-  })
-
-  -- Set up lspconfig.
-  local capabilities = require('cmp_nvim_lsp').default_capabilities()
-  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
-    capabilities = capabilities
-  }
 EOF
