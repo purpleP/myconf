@@ -93,8 +93,9 @@ nnoremap <silent> <CR> :Tele find_files<CR>
 nnoremap <silent> <C-I> <C-I>
 nnoremap <silent> <C-H> <C-H>
 nnoremap <silent> <TAB> :Tele lsp_document_symbols<CR>
-nnoremap <silent> <BS> :Tele live_grep<CR>
-nnoremap <silent> <DEL> :Vex<CR>
+nnoremap <silent> <DEL> :Tele live_grep<CR>
+
+nnoremap <silent> <BS> :Ex<CR>
 augroup Quickfix
     au!
     au BufReadPost quickfix nnoremap <buffer> <CR> <CR>
@@ -107,7 +108,11 @@ augroup HighlightYank
     autocmd!
     au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
 augroup END
-set tagfunc=lua.vim.lsp.tagfunc
+
+augroup Clean
+    au!
+    au InsertLeave * keepp s/\s\+$//e
+augroup END
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
@@ -148,6 +153,8 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
   }
 }
 
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+
 require'lspconfig'.rust_analyzer.setup {
   capabilities = capabilities,
   on_attach = on_attach,
@@ -177,6 +184,11 @@ require("nvim-autopairs").setup({
 -- Set up nvim-cmp.
 local cmp = require'cmp'
 
+  local has_words_before = function()
+    junpack = unpack or table.unpack
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+  end
   cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine
@@ -192,6 +204,26 @@ local cmp = require'cmp'
       -- documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
+      ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            elseif require('snippy').can_expand_or_advance() then
+              require('snippy').expand_or_advance()
+            elseif has_words_before() then
+              cmp.complete()
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+      ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif require('snippy').can_jump(-1) then
+              require('snippy').previous()
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
@@ -219,3 +251,4 @@ local cmp = require'cmp'
   })
 
 EOF
+let g:rustfmt_fail_silently = 1
